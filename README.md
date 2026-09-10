@@ -219,6 +219,6 @@ El proyecto incluye vistas simples renderizadas desde el servidor usando Pug par
 
 > **Captura de Pantalla del Explorador de Lotes:**
 >
-> <!-- Reemplaza la ruta entre paréntesis con la ruta real o enlace de tu imagen. Por ejemplo: ./assets/captura-lotes.png -->
->
-> ![Captura de la vista de Lotes y Observaciones](ruta/a/tu/imagen.png)
+> 
+> ![Captura de la vista de Lotes y Observaciones](assets/Img1.JPG)
+> ![Captura de la vista de Lotes y Observaciones](assets/Img2.JPG)
