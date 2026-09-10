@@ -2,14 +2,14 @@
 
 **AgroTec** es un sistema backend de monitoreo agrícola desarrollado para digitalizar el registro de observaciones en lotes, reemplazando los métodos tradicionales en papel. Este proyecto está estructurado bajo el patrón MVC (Modelo-Vista-Controlador) y expone una API REST.
 
-## 🚀 Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - **Entorno:** Node.js
 - **Framework:** Express.js
 - **Vistas:** Motor de plantillas Pug
 - **Persistencia de Datos:** Archivos locales `.json` (Sistema de archivos `fs`)
 
-## 📋 Características Principales
+## Características Principales
 
 - **Gestión de Productores y Lotes:** API REST completa (CRUD) para registrar productores y sus lotes de campo asociados.
 - **Registro de Observaciones:** Permite a los técnicos registrar observaciones detalladas vinculadas a un lote con fecha y estado.
@@ -17,7 +17,7 @@
 - **Inmutabilidad (Soft Delete):** Las observaciones mantienen un historial persistente; al "eliminarse" se desactivan de forma lógica, sin perder la información.
 - **Búsqueda Avanzada:** Filtrado dinámico de lotes según el nivel de alerta de sus observaciones.
 
-## ⚙️ Instalación y Configuración
+## Instalación y Configuración
 
 1. Clona este repositorio.
 2. Abre la terminal en el directorio del proyecto y ejecuta:
@@ -34,7 +34,7 @@
 
 A continuación se detallan los endpoints disponibles junto con ejemplos de cómo enviar la información. Para las peticiones `POST` y `PUT`, asegúrate de enviar los datos en formato JSON (`Content-Type: application/json`).
 
-### 🧑‍🌾 Productores (`/api/productores`)
+### Productores (`/api/productores`)
 
 - **`GET /api/productores`**
   - **Descripción:** Obtiene la lista de todos los productores.
@@ -72,7 +72,7 @@ A continuación se detallan los endpoints disponibles junto con ejemplos de cóm
 
 ---
 
-### 🚜 Lotes (`/api/lotes`)
+### Lotes (`/api/lotes`)
 
 - **`GET /api/lotes`**
   - **Descripción:** Obtiene la lista de todos los lotes. Permite filtrado por nivel de alerta.
@@ -132,7 +132,7 @@ A continuación se detallan los endpoints disponibles junto con ejemplos de cóm
   - **Ejemplo:** `DELETE /api/observaciones/1`
   - **Respuesta:** `{ "mensaje": "Observación eliminada (soft delete) correctamente" }`
 
-## 🖥️ Vistas Frontend
+## Vistas Frontend
 
 El proyecto incluye vistas simples renderizadas desde el servidor usando Pug para interactuar rápidamente con los datos:
 
