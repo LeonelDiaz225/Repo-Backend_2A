@@ -1,15 +1,15 @@
-# AgroTec 🌱 - Yoda Labs
+# AgroTec - Yoda Labs
 
 **AgroTec** es un sistema backend de monitoreo agrícola desarrollado para digitalizar el registro de observaciones en lotes, reemplazando los métodos tradicionales en papel. Este proyecto está estructurado bajo el patrón MVC (Modelo-Vista-Controlador) y expone una API REST.
 
-## 🚀 Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - **Entorno:** Node.js
 - **Framework:** Express.js
 - **Vistas:** Motor de plantillas Pug
 - **Persistencia de Datos:** Archivos locales `.json` (Sistema de archivos `fs`)
 
-## 📋 Características Principales
+## Características Principales
 
 - **Gestión de Productores y Lotes:** API REST completa (CRUD) para registrar productores y sus lotes de campo asociados.
 - **Registro de Observaciones:** Permite a los técnicos registrar observaciones detalladas vinculadas a un lote con fecha y estado.
@@ -17,7 +17,7 @@
 - **Inmutabilidad (Soft Delete):** Las observaciones mantienen un historial persistente; al "eliminarse" se desactivan de forma lógica, sin perder la información.
 - **Búsqueda Avanzada:** Filtrado dinámico de lotes según el nivel de alerta de sus observaciones.
 
-## ⚙️ Instalación y Configuración
+## Instalación y Configuración
 
 1. Clona este repositorio.
 2. Abre la terminal en el directorio del proyecto y ejecuta:
@@ -30,11 +30,11 @@
    ```
    _Nota: Si tienes `nodemon` instalado, puedes usar `nodemon app.js` para desarrollo._
 
-## 🔗 Documentación de Endpoints y Ejemplos
+## Documentación de Endpoints y Ejemplos
 
 A continuación se detallan los endpoints disponibles junto con ejemplos de cómo enviar la información. Para las peticiones `POST` y `PUT`, asegúrate de enviar los datos en formato JSON (`Content-Type: application/json`).
 
-### 🧑‍🌾 Productores (`/api/productores`)
+### Productores (`/api/productores`)
 
 - **`GET /api/productores`**
   - **Descripción:** Obtiene la lista de todos los productores.
@@ -72,7 +72,7 @@ A continuación se detallan los endpoints disponibles junto con ejemplos de cóm
 
 ---
 
-### 🚜 Lotes (`/api/lotes`)
+### Lotes (`/api/lotes`)
 
 - **`GET /api/lotes`**
   - **Descripción:** Obtiene la lista de todos los lotes. Permite filtrado por nivel de alerta.
@@ -110,7 +110,7 @@ A continuación se detallan los endpoints disponibles junto con ejemplos de cóm
 
 ---
 
-### 🔎 Observaciones (`/api/observaciones`)
+### Observaciones (`/api/observaciones`)
 
 - **`POST /api/observaciones`**
   - **Descripción:** Crea una nueva observación. Valida internamente que el lote y el técnico existan. El `nivel_alerta` solo acepta: "Normal", "Atención" o "Crítico".
@@ -132,7 +132,23 @@ A continuación se detallan los endpoints disponibles junto con ejemplos de cóm
   - **Ejemplo:** `DELETE /api/observaciones/1`
   - **Respuesta:** `{ "mensaje": "Observación eliminada (soft delete) correctamente" }`
 
-## 🖥️ Vistas Frontend
+---
+
+### Tablas de Referencia (Técnicos y Tipos de Cultivo)
+
+Ambas entidades (`/api/tecnicos` y `/api/tipos-cultivo`) soportan ahora operaciones CRUD completas al igual que los Productores:
+
+- **`GET /api/tecnicos` y `GET /api/tipos-cultivo`**
+  - **Descripción:** Obtiene la lista completa (útil para llenar selects en el frontend).
+  - **Ejemplo de Respuesta:** `[ { "id": 1, "nombre": "Juan Pérez" } ]`
+
+- **`GET /api/.../:id`** - Obtiene un registro específico por su ID.
+- **`POST /api/...`** - Crea un nuevo registro.
+  - **Ejemplo de Body (JSON):** `{ "nombre": "Nuevo Registro" }`
+- **`PUT /api/.../:id`** - Actualiza el nombre del registro.
+- **`DELETE /api/.../:id`** - Elimina el registro físicamente.
+
+## Vistas Frontend
 
 El proyecto incluye vistas simples renderizadas desde el servidor usando Pug para interactuar rápidamente con los datos:
 

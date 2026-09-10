@@ -16,11 +16,15 @@ app.use(express.urlencoded({ extended: true }));
 const productoresRoutes = require("./routes/productoresRoutes");
 const lotesRoutes = require("./routes/lotesRoutes");
 const observacionesRoutes = require("./routes/observacionesRoutes");
+const tecnicosRoutes = require("./routes/tecnicosRoutes");
+const tiposCultivoRoutes = require("./routes/tiposCultivoRoutes");
 
 // Rutas principales
 app.use("/api/productores", productoresRoutes);
 app.use("/api/lotes", lotesRoutes);
 app.use("/api/observaciones", observacionesRoutes);
+app.use("/api/tecnicos", tecnicosRoutes);
+app.use("/api/tipos-cultivo", tiposCultivoRoutes);
 
 // Ruta de prueba
 app.get("/", (req, res) => {
