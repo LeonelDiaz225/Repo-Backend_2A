@@ -140,19 +140,75 @@ A continuación se detallan los endpoints disponibles junto con ejemplos de cóm
 
 ---
 
-### Tablas de Referencia (Técnicos y Tipos de Cultivo)
+### Técnicos (`/api/tecnicos`)
 
-Ambas entidades (`/api/tecnicos` y `/api/tipos-cultivo`) soportan ahora operaciones CRUD completas al igual que los Productores:
-
-- **`GET /api/tecnicos` y `GET /api/tipos-cultivo`**
-  - **Descripción:** Obtiene la lista completa (útil para llenar selects en el frontend).
+- **`GET /api/tecnicos`**
+  - **Descripción:** Obtiene la lista de todos los técnicos registrados.
   - **Ejemplo de Respuesta:** `[ { "id": 1, "nombre": "Juan Pérez" } ]`
 
-- **`GET /api/.../:id`** - Obtiene un registro específico por su ID.
-- **`POST /api/...`** - Crea un nuevo registro.
-  - **Ejemplo de Body (JSON):** `{ "nombre": "Nuevo Registro" }`
-- **`PUT /api/.../:id`** - Actualiza el nombre del registro.
-- **`DELETE /api/.../:id`** - Elimina el registro físicamente.
+- **`GET /api/tecnicos/:id`**
+  - **Descripción:** Obtiene un técnico específico por su ID.
+  - **Ejemplo:** `GET /api/tecnicos/1`
+
+- **`POST /api/tecnicos`**
+  - **Descripción:** Crea un nuevo técnico.
+  - **Ejemplo de Body (JSON):**
+    ```json
+    {
+      "nombre": "Roberto Sánchez"
+    }
+    ```
+
+- **`PUT /api/tecnicos/:id`**
+  - **Descripción:** Actualiza el nombre de un técnico existente.
+  - **Ejemplo:** `PUT /api/tecnicos/1`
+  - **Ejemplo de Body (JSON):**
+    ```json
+    {
+      "nombre": "Roberto Sánchez Modificado"
+    }
+    ```
+
+- **`DELETE /api/tecnicos/:id`**
+  - **Descripción:** Elimina un técnico físicamente.
+  - **Ejemplo:** `DELETE /api/tecnicos/1`
+  - **Respuesta:** `{ "mensaje": "Técnico eliminado correctamente" }`
+
+---
+
+### Tipos de Cultivo (`/api/tipos-cultivo`)
+
+- **`GET /api/tipos-cultivo`**
+  - **Descripción:** Obtiene la lista de todos los tipos de cultivo registrados.
+  - **Ejemplo de Respuesta:** `[ { "id": 1, "nombre": "Soja" } ]`
+
+- **`GET /api/tipos-cultivo/:id`**
+  - **Descripción:** Obtiene un tipo de cultivo específico por su ID.
+  - **Ejemplo:** `GET /api/tipos-cultivo/1`
+
+- **`POST /api/tipos-cultivo`**
+  - **Descripción:** Crea un nuevo tipo de cultivo.
+  - **Ejemplo de Body (JSON):**
+    ```json
+    {
+      "nombre": "Sorgo"
+    }
+    ```
+
+- **`PUT /api/tipos-cultivo/:id`**
+  - **Descripción:** Actualiza el nombre de un tipo de cultivo existente.
+  - **Ejemplo:** `PUT /api/tipos-cultivo/1`
+  - **Ejemplo de Body (JSON):**
+    ```json
+    {
+      "nombre": "Sorgo Modificado"
+    }
+    ```
+
+- **`DELETE /api/tipos-cultivo/:id`**
+  - **Descripción:** Elimina un tipo de cultivo físicamente.
+  - **Ejemplo:** `DELETE /api/tipos-cultivo/1`
+  - **Respuesta:** `{ "mensaje": "Tipo de cultivo eliminado correctamente" }`
 
 ## Vistas Frontend
 
@@ -162,6 +218,7 @@ El proyecto incluye vistas simples renderizadas desde el servidor usando Pug par
 - **Explorador de Lotes:** `http://localhost:3000/vista/lotes`
 
 > **Captura de Pantalla del Explorador de Lotes:**
-> 
+>
 > <!-- Reemplaza la ruta entre paréntesis con la ruta real o enlace de tu imagen. Por ejemplo: ./assets/captura-lotes.png -->
+>
 > ![Captura de la vista de Lotes y Observaciones](ruta/a/tu/imagen.png)
