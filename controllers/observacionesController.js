@@ -2,6 +2,27 @@ const Observacion = require("../models/Observacion");
 const Lote = require("../models/Lote");
 const Tecnico = require("../models/Tecnico");
 
+// GET /api/observaciones
+exports.getAll = (req, res) => {
+    try {
+        const observaciones = Observacion.getAll();
+        res.status(200).json(observaciones);
+    } catch (error) {
+        res.status(500).json({ error: 'Error al obtener observaciones' });
+    }
+};
+
+// GET /api/observaciones/:id
+exports.getById = (req, res) => {
+    try {
+        const obs = Observacion.getById(req.params.id);
+        if (!obs) return res.status(404).json({ error: 'Observación no encontrada' });
+        res.status(200).json(obs);
+    } catch (error) {
+        res.status(500).json({ error: 'Error al obtener la observación' });
+    }
+};
+
 // POST /api/observaciones
 exports.create = (req, res) => {
   try {

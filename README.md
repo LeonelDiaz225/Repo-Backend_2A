@@ -112,6 +112,12 @@ A continuación se detallan los endpoints disponibles junto con ejemplos de cóm
 
 ### Observaciones (`/api/observaciones`)
 
+- **`GET /api/observaciones`**
+  - **Descripción:** Obtiene la lista de todas las observaciones registradas.
+
+- **`GET /api/observaciones/:id`**
+  - **Descripción:** Obtiene una observación específica por su ID.
+
 - **`POST /api/observaciones`**
   - **Descripción:** Crea una nueva observación. Valida internamente que el lote y el técnico existan. El `nivel_alerta` solo acepta: "Normal", "Atención" o "Crítico".
   - **Ejemplo de Body (JSON):**
@@ -154,3 +160,8 @@ El proyecto incluye vistas simples renderizadas desde el servidor usando Pug par
 
 - **Inicio:** `http://localhost:3000/`
 - **Explorador de Lotes:** `http://localhost:3000/vista/lotes`
+
+> **Captura de Pantalla del Explorador de Lotes:**
+> 
+> <!-- Reemplaza la ruta entre paréntesis con la ruta real o enlace de tu imagen. Por ejemplo: ./assets/captura-lotes.png -->
+> ![Captura de la vista de Lotes y Observaciones](ruta/a/tu/imagen.png)
