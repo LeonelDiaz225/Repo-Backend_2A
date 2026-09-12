@@ -1,7 +1,10 @@
 [
   {
     "id": 1,
-    "nombre": "Estancia El Ombú",
-    "contacto": "Juan Perez - 1122334455"
+    "nombre": "Juan",
+    "apellido": "Pérez",
+    "telefono": "1122334455",
+    "email": "juan.perez@agrotec.com",
+    "establecimiento": "Estancia El Ombú"
   }
 ]

@@ -25,35 +25,37 @@ exports.getById = (req, res) => {
 // POST /api/productores
 exports.create = (req, res) => {
   try {
-    const { nombre, contacto } = req.body;
-    // Validación básica
-    if (!nombre || !contacto) {
-      return res
-        .status(400)
-        .json({ error: "El nombre y el contacto son obligatorios" });
-    }
-
-    const nuevoProductor = Productor.create({ nombre, contacto });
+    const { nombre, apellido, telefono, email, establecimiento } = req.body;
+    const nuevoProductor = Productor.create({
+      nombre,
+      apellido,
+      telefono,
+      email,
+      establecimiento,
+    });
     res.status(201).json(nuevoProductor);
   } catch (error) {
-    res.status(500).json({ error: "Error al crear el productor" });
+    res.status(400).json({ error: error.message });
   }
 };
 
 // PUT /api/productores/:id
 exports.update = (req, res) => {
   try {
-    const { nombre, contacto } = req.body;
+    const { nombre, apellido, telefono, email, establecimiento } = req.body;
     const productorActualizado = Productor.update(req.params.id, {
       nombre,
-      contacto,
+      apellido,
+      telefono,
+      email,
+      establecimiento,
     });
 
     if (!productorActualizado)
       return res.status(404).json({ error: "Productor no encontrado" });
     res.status(200).json(productorActualizado);
   } catch (error) {
-    res.status(500).json({ error: "Error al actualizar el productor" });
+    res.status(400).json({ error: error.message });
   }
 };
 
