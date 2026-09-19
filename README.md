@@ -220,5 +220,5 @@ El proyecto incluye vistas simples renderizadas desde el servidor usando Pug par
 > **Captura de Pantalla del Explorador de Lotes:**
 >
 > 
-> ![Captura de la vista de Lotes y Observaciones](assets/Img1.JPG)
+> ![Captura de la vista de Listado de lotes](assets/Img1.JPG)
 > ![Captura de la vista de Lotes y Observaciones](assets/Img2.JPG)
